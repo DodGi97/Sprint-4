@@ -1,4 +1,4 @@
-package PageObject;
+package pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -26,6 +26,24 @@ public class FrequentlyAskedQuestions extends BaseSeleniumPage{
     private By sevenQuestion = By.xpath("//div[@id= 'accordion__heading-6']");
     //восьмой вопрос
     private By eightQuestion = By.xpath("//div[@id= 'accordion__heading-7']");
+    //текст первого вопрос
+    private By textOneQuestion = By.xpath("//div[@id= 'accordion__panel-0']");
+    //текст второго вопроса
+    private By textTwoQuestion = By.xpath("//div[@id= 'accordion__panel-1']");
+    //текст третьего вопроса
+    private By textThreeQuestion = By.xpath("//div[@id= 'accordion__panel-2']");
+    //текст четвертого вопроса
+    private By textForeQuestion = By.xpath("//div[@id= 'accordion__panel-3']");
+    //текст пятого вопроса
+    private By textFiveQuestion = By.xpath("//div[@id= 'accordion__panel-4']");
+    //текст шестого вопроса
+    private By textSixQuestion = By.xpath("//div[@id= 'accordion__panel-5']");
+    //текст седьмого вопроса
+    private By textSevenQuestion = By.xpath("//div[@id= 'accordion__panel-6']");
+    //текст восьмого вопроса
+    private By textEightQuestion = By.xpath("//div[@id= 'accordion__panel-7']");
+
+
 
 
     //методы для работы с объектами страницы
@@ -82,6 +100,43 @@ public class FrequentlyAskedQuestions extends BaseSeleniumPage{
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
         driver.findElement(eightQuestion).click();
     }
+
+    public String getQuestionTextOne(){
+        driver.findElement(textOneQuestion).getText();
+        return driver.findElement(textOneQuestion).getText();
+    }
+
+    public String getQuestionTextTwo(){
+        driver.findElement(textTwoQuestion).getText();
+        return driver.findElement(textTwoQuestion).getText();
+    }
+    public String getQuestionTextThree(){
+        driver.findElement(textThreeQuestion).getText();
+        return driver.findElement(textThreeQuestion).getText();
+    }
+    public String getQuestionTextFore(){
+        driver.findElement(textForeQuestion).getText();
+        return driver.findElement(textForeQuestion).getText();
+    }
+    public String getQuestionTextFive(){
+        driver.findElement(textFiveQuestion).getText();
+        return driver.findElement(textFiveQuestion).getText();
+    }
+
+    public String getQuestionTextSix(){
+        driver.findElement(textSixQuestion).getText();
+        return driver.findElement(textSixQuestion).getText();
+    }
+
+    public String getQuestionTextSeven(){
+        driver.findElement(textSevenQuestion).getText();
+        return driver.findElement(textSevenQuestion).getText();
+    }
+    public String getQuestionTextEight(){
+        driver.findElement(textEightQuestion).getText();
+        return driver.findElement(textEightQuestion).getText();
+    }
+
 
 
 }

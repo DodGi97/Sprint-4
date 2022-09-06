@@ -1,4 +1,4 @@
-package PageObject;
+package pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -47,9 +47,12 @@ public class OrderPage extends BaseSeleniumPage {
     //кнопка "Да", подтверждение закаказа
     private By yesOrder = By.xpath("//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
 
+    //текст в сформированном заказе
+    private By textByOrder = By.xpath("//div[@class = 'Order_ModalHeader__3FDaJ']");
+
 
     //методы для работы с объектами страницы
-    public void clickButtonOrder() {
+    public void clickButtonOrder () {
         driver.findElement(orderButton).click();
     }
 
@@ -119,9 +122,15 @@ public class OrderPage extends BaseSeleniumPage {
         driver.findElement(buttonCreateOrder).click();
     }
 
-    public void clickAsseptOrder(){
+    public void clickAcceptOrder(){
         driver.findElement(yesOrder).click();
     }
+
+    public String getOrderText(){
+        driver.findElement(textByOrder).getText();
+        return driver.findElement(textByOrder).getText();
+    }
+
 
 }
 

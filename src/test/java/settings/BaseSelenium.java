@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseSelenium {
     protected WebDriver driver;
+    protected final String LINK_FOR_SERVES_SAMOKATE = "https://qa-scooter.praktikum-services.ru/";
 
     @Before
     public void setUp(){
@@ -19,7 +20,7 @@ public class BaseSelenium {
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         BaseSeleniumPage.setDriver(driver);
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+        driver.get(LINK_FOR_SERVES_SAMOKATE);
     }
 
     @After
